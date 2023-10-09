@@ -1,6 +1,7 @@
 package org.example.courier;
 
 import io.qameta.allure.Issue;
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -29,6 +30,7 @@ public class CourierUnsuccessfulLoginWithoutRequiredFieldsTest {
     }
 
     @Test
+    @DisplayName("Неуспешная авторизация курьера без обязательных полей")
     @Issue("При логине без поля login или без всех полей приходит 504, а не 400")
     public void unsuccessfulCourierLoginWithoutRequiredField() {
         ValidatableResponse loginResponse = client.login(creds);

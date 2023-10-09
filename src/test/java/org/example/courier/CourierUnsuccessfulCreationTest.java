@@ -1,5 +1,6 @@
 package org.example.courier;
 
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -29,6 +30,7 @@ public class CourierUnsuccessfulCreationTest {
     }
 
     @Test
+    @DisplayName("Неуспешное создание курьера без обязательных полей")
     public void unsuccessfulCourierCreation() {
         Courier courier = CourierGenerator.withoutSomeField(field);
 

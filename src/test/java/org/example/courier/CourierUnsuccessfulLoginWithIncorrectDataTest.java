@@ -1,6 +1,7 @@
 package org.example.courier;
 
 import io.qameta.allure.Issue;
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Test;
@@ -30,6 +31,7 @@ public class CourierUnsuccessfulLoginWithIncorrectDataTest {
     }
 
     @Test
+    @DisplayName("Неуспешная авторизация курьера с неверными данными")
     public void unsuccessfulCourierLoginWithoutRequiredField() {
         ValidatableResponse loginResponse = client.login(creds);
         check.gotErrorWhenLoginWithIncorrectData(loginResponse);

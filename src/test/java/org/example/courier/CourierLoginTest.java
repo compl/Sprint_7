@@ -1,5 +1,6 @@
 package org.example.courier;
 
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
 import org.junit.After;
 import org.junit.Test;
@@ -17,6 +18,7 @@ public class CourierLoginTest {
     }
 
     @Test
+    @DisplayName("Авторизация курьера")
     public void successfulCourierLogin() {
         Courier courier = CourierGenerator.randomLoginField();
 

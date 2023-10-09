@@ -1,6 +1,7 @@
 package org.example.courier;
 
 import io.qameta.allure.Issue;
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
 import org.junit.After;
 import org.junit.Test;
@@ -22,6 +23,7 @@ public class CourierCreationTest {
     }
 
     @Test
+    @DisplayName("Создание курьера")
     public void successfulCourierCreation() {
         courier = CourierGenerator.randomLoginField();
 
@@ -30,6 +32,7 @@ public class CourierCreationTest {
     }
 
     @Test
+    @DisplayName("Создание курьера, используя только обязательные поля")
     public void successfulCourierCreationWithOnlyRequiredFields() {
         courier = CourierGenerator.withoutSomeField("firstName");
 
@@ -38,6 +41,7 @@ public class CourierCreationTest {
     }
 
     @Test
+    @DisplayName("Неуспешное создание курьера с существующем логином")
     @Issue("ФР != ОР из описания API")
     public void unsuccessfulCourierCreationWithExistingLogin() {
         courier = CourierGenerator.randomLoginField();
